@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import arm from "./assets/4arm.png"
+// import arm from "./assets/4arm.png"
 dotenv.config(); // Load environment variables from .env file
 
 const app = express();
