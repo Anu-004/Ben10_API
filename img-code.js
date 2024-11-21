@@ -12,7 +12,7 @@ dotenv.config(); // Load environment variables from .env file
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173/"],
   methods: ["GET", "POST","PUT","DELETE"]
 })); // Enable CORS for all routes
 app.use(express.urlencoded({ extended: true }));
@@ -45,10 +45,8 @@ mongoose
 const ben10Schema = new mongoose.Schema({
   characterName: { type: String, required: true },
   characterDescription: { type: String, required: true },
-  image: {
-    data: Buffer, // Store image data as a Buffer
-    contentType: String, // Store the image MIME type (e.g., 'image/png', 'image/jpeg')
-  },
+  image: { Buffer },
+  name: { String }
 });
 
 // Create model/collection
