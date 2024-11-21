@@ -1,29 +1,14 @@
-[
   {
     "characterName": "Ben Tennyson",
     "characterDescription": "Ben Tennyson is the main protagonist, a young boy who gains the ability to transform into various aliens using the Omnitrix.",
     "imageUrl": "https://example.com/images/ben_tennyson.jpg"
   },
   {
-    "characterName": "Four Arms",
-    "characterDescription": "Four Arms is a Tetramand with super strength and enhanced agility. He has four muscular arms and is one of Ben's favorite transformations for powerful combat.",
-    "imageUrl": "./assets/4arm.png"
-  },
-  {
-    "characterName": "Heatblast",
-    "characterDescription": "Heatblast is a Pyronite with the ability to generate and manipulate intense flames. He is made of magma and can release fire blasts and fiery attacks.",
-    "imageUrl": "https://example.com/images/heatblast.jpg"
-  },
-  {
     "characterName": "Diamondhead",
     "characterDescription": "Diamondhead is a Petrosapien with a crystalline body that can create crystal weapons and projectiles. He is incredibly durable and can regenerate damaged parts.",
     "imageUrl": "https://example.com/images/diamondhead.jpg"
   },
-  {
-    "characterName": "XLR8",
-    "characterDescription": "XLR8 is a Kineceleran with superspeed abilities. With his wheel-like feet and retractable claws, he can reach extreme speeds, making him useful for quick escapes and high-speed chases.",
-    "imageUrl": "https://example.com/images/xlr8.jpg"
-  },
+  ,
   {
     "characterName": "Grey Matter",
     "characterDescription": "Grey Matter is a Galvan with exceptional intelligence and problem-solving skills. Although small in size, his intellect allows him to outsmart enemies and solve complex puzzles.",
@@ -69,4 +54,3 @@
     "characterDescription": "Kevin Levin is initially a villain but later becomes Ben’s ally. He has the ability to absorb various materials, turning his body into that substance.",
     "imageUrl": "https://example.com/images/kevin_levin.jpg"
   }
-]

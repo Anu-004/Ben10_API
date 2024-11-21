@@ -3,7 +3,6 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-// import arm from "./assets/4arm.png"
 dotenv.config(); // Load environment variables from .env file
 
 const app = express();
@@ -27,7 +26,7 @@ mongoose
 const PostSchema = new mongoose.Schema({
   characterName: { type: String, required: true },
   characterDescription: { type: String, required: true },
-//   imageUrl: { type: String }, // New field for character image
+  imageUrl: { type: String }, // New field for character image
 });
 
 // Create model/collection
@@ -41,15 +40,15 @@ app.post("/api/ben", async (req, res) => {
     imageUrl: req.body.imageUrl, // Store image URL from request
   });
 
-    try {
-        const ben = req.body
-        let result
-        if(Array.isArray(ben)){
-            result = await Post.insertMany(ben)
-        } else {
-            const newBen=new Post(ben)
-            result = await newBen.save()
-        }
+  try {
+    const ben = req.body;
+    let result;
+    if (Array.isArray(ben)) {
+      result = await Post.insertMany(ben);
+    } else {
+      const newBen = new Post(ben);
+      result = await newBen.save();
+    }
     // const savedPost = await newPost.save();
     res.status(200).json(result);
   } catch (err) {
@@ -64,7 +63,9 @@ app.get("/api/ben/:id", async (req, res) => {
     if (getPost) {
       res.status(200).json(getPost);
     } else {
-      res.status(404).json({ message: `Post with id ${req.params.id} not found` });
+      res
+        .status(404)
+        .json({ message: `Post with id ${req.params.id} not found` });
     }
   } catch (err) {
     res.status(400).json({ message: "Something went wrong", err });
@@ -85,11 +86,15 @@ app.get("/api/ben", async (req, res) => {
 // Update post by ID
 app.put("/api/ben/:id", async (req, res) => {
   try {
-    const updatePost = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatePost = await Post.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (updatePost) {
       res.status(200).json(updatePost);
     } else {
-      res.status(404).json({ message: `Post with id ${req.params.id} not found` });
+      res
+        .status(404)
+        .json({ message: `Post with id ${req.params.id} not found` });
     }
   } catch (err) {
     res.status(500).json({ message: "Something went wrong", err });
@@ -103,7 +108,9 @@ app.delete("/api/ben/:id", async (req, res) => {
     if (deletePost) {
       res.status(200).json(deletePost);
     } else {
-      res.status(404).json({ message: `Post with id ${req.params.id} not found` });
+      res
+        .status(404)
+        .json({ message: `Post with id ${req.params.id} not found` });
     }
   } catch (err) {
     res.status(500).json({ message: "Something went wrong", err });
