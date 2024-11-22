@@ -15,8 +15,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["https://ben10-website.vercel.app/"],
+    origin: ["https://ben10-website.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
   })
 );
 
